@@ -121,4 +121,30 @@ window.onload = function() {
   ctx3.strokeStyle = "blue";
   ctx3.lineJoin = "square";
   ctx3.strokeRect(350, 100, 100, 100);
+
+  // 04. TEXTS ---------------------------------------------------------------
+
+  const cv4 = this.document.getElementById('4');
+  const ctx4 = cv4.getContext('2d');
+  cv4.width = 600;
+  cv4.height = 300;
+
+  ctx4.font = "45px Verdana";  // font = "font-style font-weight font-size font-family"
+  ctx4.textAlign = "start";
+  ctx4.textBaseline = "middle";  // align on the vertical axis
+
+  const fText = "Fill Text on Canvas";
+  ctx4.fillText(fText, 80, 50, 200);  // fillText(text, xCoord, yCoord, maxWidth)
+
+  ctx4.font = "italic 700 45px monospace"
+  const sText = "Stroke Text on Canvas";
+  ctx4.strokeText(sText, 80, 150);  // strokeText(text, xCoord, yCoord, maxWidth)
+
+  const text = "This text will be shadowed!";
+  ctx4.font = "normal 700 24px times";
+  ctx4.shadowColor = "red";
+  ctx4.shadowOffsetX = 5;
+  ctx4.shadowOffsetY = 5;
+  ctx4.shadowBlur = 4;
+  ctx4.fillText(text, 80, 250);
 }
