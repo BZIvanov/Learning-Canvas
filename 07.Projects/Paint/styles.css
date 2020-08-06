@@ -30,7 +30,7 @@ main {
   cursor: pointer;
   width: 20px;
   height: 20px;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
 .colors button:nth-of-type(1) {
@@ -154,7 +154,7 @@ main {
 }
 
 .brushes {
-  padding-top: 5px
+  padding-top: 5px;
 }
 
 .brushes button {
@@ -223,5 +223,5 @@ main {
 }
 
 #paint-canvas {
-  cursor:crosshair;
+  cursor: crosshair;
 }

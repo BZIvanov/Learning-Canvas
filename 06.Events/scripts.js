@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   // 01. Handling events ------------------------------------------------------------------
 
   const cv1 = this.document.getElementById('1');
@@ -6,7 +6,7 @@ window.onload = function() {
   cv1.width = 600;
   cv1.height = 300;
   const boundings = cv1.getBoundingClientRect(); // here we will get the width and height of the specified element
-  
+
   const balls = 5;
   const ballsArr = [];
   let currentBall = null;
@@ -15,7 +15,8 @@ window.onload = function() {
   for (let i = 0; i < balls; i++) {
     const radius = getRandomInt(25, 50);
     const randColor = createRandomRGBColor();
-    const ballColor = 'rgb(' + randColor.r + ',' + randColor.g + ',' + randColor.b +')';
+    const ballColor =
+      'rgb(' + randColor.r + ',' + randColor.g + ',' + randColor.b + ')';
     const ball = new Ball(radius, ballColor);
     ball.context = ctx1;
     ball.x = getRandomInt(radius, cv1.width - radius);
@@ -37,7 +38,11 @@ window.onload = function() {
   function isHitOnBall(mx, my) {
     console.log('alperen');
     for (let i = balls - 1; i >= 0; i--) {
-      if (Math.sqrt(Math.pow((mx - ballsArr[i].x), 2) + Math.pow((my - ballsArr[i].y), 2)) < ballsArr[i].r) {
+      if (
+        Math.sqrt(
+          Math.pow(mx - ballsArr[i].x, 2) + Math.pow(my - ballsArr[i].y, 2)
+        ) < ballsArr[i].r
+      ) {
         currentBall = ballsArr[i];
         break;
       }
@@ -45,15 +50,15 @@ window.onload = function() {
   }
 
   // Mouse Event Handlers
-  cv1.addEventListener('mousedown', function(event) {
+  cv1.addEventListener('mousedown', function (event) {
     console.log('mousedown');
     const mouseDownX = event.clientX - boundings.left;
     const mouseDownY = event.clientY - boundings.top;
-    console.log(mouseDownX)
+    console.log(mouseDownX);
     isHitOnBall(mouseDownX, mouseDownY);
   });
 
-  cv1.addEventListener('mousemove', function(event) {
+  cv1.addEventListener('mousemove', function (event) {
     console.log('mousemove');
     const mouseMoveX = event.clientX - boundings.left;
     const mouseMoveY = event.clientY - boundings.top;
@@ -66,9 +71,9 @@ window.onload = function() {
     }
   });
 
-  cv1.addEventListener('mouseup', function() {
+  cv1.addEventListener('mouseup', function () {
     console.log('mouseup');
-    currentBall = null;    
+    currentBall = null;
   });
 };
 
@@ -83,4 +88,4 @@ function createRandomRGBColor() {
   const green = getRandomInt(0, 257);
   const blue = getRandomInt(0, 257);
   return { r: red, g: green, b: blue };
-};
+}
