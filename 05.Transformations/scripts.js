@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   // 01. SCALE ------------------------------------------------------------------
 
   const cv1 = this.document.getElementById('1');
@@ -10,17 +10,17 @@ window.onload = function() {
   // horizontalScaleFactor (double): Scales the width of the current drawing (1=100%, 0.5=50%, 2=200%, etc.)
   // verticalScaleFactor (double):   Scales the height of the current drawing (1=100%, 0.5=50%, 2=200%, etc.)
 
-  ctx1.fillStyle = "red";
+  ctx1.fillStyle = 'red';
   ctx1.fillRect(20, 20, 40, 30);
 
   ctx1.scale(2, 2);
 
-  ctx1.fillStyle = "blue";
+  ctx1.fillStyle = 'blue';
   ctx1.fillRect(20, 20, 40, 30);
 
   ctx1.scale(2, 2);
 
-  ctx1.fillStyle = "green";
+  ctx1.fillStyle = 'green';
   ctx1.fillRect(20, 20, 40, 30);
 
   // 02. ROTATE ------------------------------------------------------------------
@@ -35,12 +35,12 @@ window.onload = function() {
 
   const radian = Math.PI / 180; // 1 unit radian
 
-  ctx2.fillStyle = "green";
+  ctx2.fillStyle = 'green';
   ctx2.fillRect(320, 20, 200, 80);
 
   ctx2.rotate(40 * radian); // the context will rotate at its origin point. The origin is changable if needed
 
-  ctx2.fillStyle = "red";
+  ctx2.fillStyle = 'red';
   ctx2.fillRect(20, 20, 200, 80);
 
   // 03. TRANSLATE ------------------------------------------------------------------
@@ -52,12 +52,12 @@ window.onload = function() {
 
   // context.translate(x,y) -> moves the canvas and its origin to (x, y)
 
-  ctx3.fillStyle = "red";
+  ctx3.fillStyle = 'red';
   ctx3.fillRect(50, 50, 90, 90);
 
   ctx3.translate(200, 100);
 
-  ctx3.fillStyle = "red";
+  ctx3.fillStyle = 'red';
   ctx3.fillRect(50, 50, 90, 90);
 
   // 04. TRANSFORM ------------------------------------------------------------------
@@ -70,16 +70,16 @@ window.onload = function() {
   // context.transform(m11, m12, m21, m22, dx, dy) it will continue from previous transform if any
   // context.setTransform(m11, m12, m21, m22, dx, dy) it will reset the context entirely
 
-  ctx4.fillStyle = "blue";
+  ctx4.fillStyle = 'blue';
   ctx4.fillRect(50, 50, 200, 100);
 
   ctx4.transform(1.5, 0, 0, 1.5, 0, 0);
 
-  ctx4.fillStyle = "green";
+  ctx4.fillStyle = 'green';
   ctx4.fillRect(50, 50, 200, 100);
 
   ctx4.resetTransform();
 
-  ctx4.fillStyle = "purple";
+  ctx4.fillStyle = 'purple';
   ctx4.fillRect(150, 150, 200, 100);
 };

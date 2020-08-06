@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   // 01. ANIMATION LOOP ------------------------------------------------------------------
 
   const cv1 = this.document.getElementById('1');
@@ -18,35 +18,45 @@ window.onload = function() {
       // Clear canvas
       ctx1.clearRect(0, 0, cv1.width, cv1.height);
 
-       // Random Colors
-       const color = createRandomRGBColor();
-       const fillOpacity = Math.random();
-       const fillColor = 'rgba('+ color.r + ', ' + color.g  + ', ' + color.b + ', ' + fillOpacity +')';
-       const borderColor = 'rgba('+ color.r + ', ' + color.g  + ', ' + color.b + ')';
+      // Random Colors
+      const color = createRandomRGBColor();
+      const fillOpacity = Math.random();
+      const fillColor =
+        'rgba(' +
+        color.r +
+        ', ' +
+        color.g +
+        ', ' +
+        color.b +
+        ', ' +
+        fillOpacity +
+        ')';
+      const borderColor =
+        'rgba(' + color.r + ', ' + color.g + ', ' + color.b + ')';
 
-       const x = getRandomInt(0, cv1.width);
-       const y = getRandomInt(0, cv1.height);
-       const w = getRandomInt(0, cv1.width - x);
-       const h = getRandomInt(0, cv1.height - y);
+      const x = getRandomInt(0, cv1.width);
+      const y = getRandomInt(0, cv1.height);
+      const w = getRandomInt(0, cv1.width - x);
+      const h = getRandomInt(0, cv1.height - y);
 
-       // Draw Rectangle
-       ctx1.beginPath();
-       ctx1.fillStyle = fillColor;
-       ctx1.strokeStyle = borderColor;
-       ctx1.rect(x, y, w, h);
-       ctx1.stroke();
-       ctx1.fill();
-     }
+      // Draw Rectangle
+      ctx1.beginPath();
+      ctx1.fillStyle = fillColor;
+      ctx1.strokeStyle = borderColor;
+      ctx1.rect(x, y, w, h);
+      ctx1.stroke();
+      ctx1.fill();
+    }
 
-     // Animate
-     window.requestAnimationFrame(drawRandomColoredRectangle);
+    // Animate
+    window.requestAnimationFrame(drawRandomColoredRectangle);
   }
 
   function createRandomRGBColor() {
     const red = getRandomInt(0, 257);
     const green = getRandomInt(0, 257);
     const blue = getRandomInt(0, 257);
-    return {r: red, g: green, b: blue};
+    return { r: red, g: green, b: blue };
   }
 
   function getRandomInt(min, max) {
@@ -55,14 +65,16 @@ window.onload = function() {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
   }
 
-  window.requestAnimationFrame = (function(){
-    return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            window.msRequestAnimationFrame     ||
-            function(callback){
-              window.setTimeout(callback, 1000 / 60);
-            };
+  window.requestAnimationFrame = (function () {
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    );
   })();
 
   // 02. RUNNING ANIMATION WITH IMAGE
@@ -103,7 +115,7 @@ window.onload = function() {
 
   function animationLoop() {
     const animationNow = new Date();
-    if (animationNow - animationStart >= 100){
+    if (animationNow - animationStart >= 100) {
       animationStart = animationNow;
 
       // Clear
@@ -124,7 +136,17 @@ window.onload = function() {
       }
 
       if (isHeroLoaded) {
-        ctx2.drawImage(hero, currentCell * cellWidth, 0, cellWidth, cellHeight, moveX, 150, 100, 100);
+        ctx2.drawImage(
+          hero,
+          currentCell * cellWidth,
+          0,
+          cellWidth,
+          cellHeight,
+          moveX,
+          150,
+          100,
+          100
+        );
       }
     }
 
@@ -132,13 +154,15 @@ window.onload = function() {
     window.requestAnimationFrame(animationLoop);
   }
 
-  window.requestAnimationFrame = (function() {
-    return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            window.msRequestAnimationFrame     ||
-            function(callback) {
-              window.setTimeout(callback, 1000 / 60);
-            };
+  window.requestAnimationFrame = (function () {
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    );
   })();
 };

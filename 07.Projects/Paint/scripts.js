@@ -1,6 +1,6 @@
 window.onload = function () {
-  const canvas = document.getElementById("paint-canvas");
-  const context = canvas.getContext("2d");
+  const canvas = document.getElementById('paint-canvas');
+  const context = canvas.getContext('2d');
   const boundings = canvas.getBoundingClientRect();
 
   let mouseX = 0;
@@ -10,16 +10,16 @@ window.onload = function () {
   let isDrawing = false;
 
   const colors = document.getElementsByClassName('colors')[0];
-  colors.addEventListener('click', function(event) {
+  colors.addEventListener('click', function (event) {
     context.strokeStyle = event.target.value || 'black';
   });
 
   const brushes = document.getElementsByClassName('brushes')[0];
-  brushes.addEventListener('click', function(event) {
+  brushes.addEventListener('click', function (event) {
     context.lineWidth = event.target.value || 1;
   });
 
-  canvas.addEventListener('mousedown', function(event) {
+  canvas.addEventListener('mousedown', function (event) {
     setMouseCoordinates(event);
     isDrawing = true;
 
@@ -27,7 +27,7 @@ window.onload = function () {
     context.moveTo(mouseX, mouseY);
   });
 
-  canvas.addEventListener('mousemove', function(event) {
+  canvas.addEventListener('mousemove', function (event) {
     setMouseCoordinates(event);
 
     if (isDrawing) {
@@ -36,7 +36,7 @@ window.onload = function () {
     }
   });
 
-  canvas.addEventListener('mouseup', function(event) {
+  canvas.addEventListener('mouseup', function (event) {
     setMouseCoordinates(event);
     isDrawing = false;
   });
@@ -47,12 +47,12 @@ window.onload = function () {
   }
 
   const clearButton = document.getElementById('clear');
-  clearButton.addEventListener('click', function() {
+  clearButton.addEventListener('click', function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
   });
 
   const saveButton = document.getElementById('save');
-  saveButton.addEventListener('click', function() {
+  saveButton.addEventListener('click', function () {
     const imageName = prompt('Please enter image name');
     const canvasDataURL = canvas.toDataURL();
     const a = document.createElement('a');

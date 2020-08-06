@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   // 01. SAVE and RESTORE ------------------------------------------------------------------
 
   const cv1 = this.document.getElementById('1');
@@ -10,15 +10,15 @@ window.onload = function() {
   // context.save()      -> saving the context state-canvas
   // context.restore()   -> restoring the state from the state stack
 
-  ctx1.fillStyle = "red";
+  ctx1.fillStyle = 'red';
   ctx1.fillRect(100, 50, 80, 80);
   ctx1.save();
 
-  ctx1.fillStyle = "green";
+  ctx1.fillStyle = 'green';
   ctx1.fillRect(200, 50, 80, 80);
   ctx1.save();
 
-  ctx1.fillStyle = "blue";
+  ctx1.fillStyle = 'blue';
   ctx1.fillRect(300, 50, 80, 80);
   ctx1.save();
 
@@ -55,13 +55,13 @@ window.onload = function() {
   cv3.height = 300;
 
   const linearGradient = ctx3.createLinearGradient(70, 40, 280, 280); // coordinates are based on whole canvas
-  linearGradient.addColorStop(0, "red"); // addColorStop(stop, color);
-  linearGradient.addColorStop(0.25, "blue");
-  linearGradient.addColorStop(0.5, "green");
-  linearGradient.addColorStop(0.75, "orange");
-  linearGradient.addColorStop(1, "white");
+  linearGradient.addColorStop(0, 'red'); // addColorStop(stop, color);
+  linearGradient.addColorStop(0.25, 'blue');
+  linearGradient.addColorStop(0.5, 'green');
+  linearGradient.addColorStop(0.75, 'orange');
+  linearGradient.addColorStop(1, 'white');
 
-  ctx3.strokeStyle = "blue";
+  ctx3.strokeStyle = 'blue';
   ctx3.lineWidth = 4;
   ctx3.fillStyle = linearGradient;
   ctx3.rect(40, 40, 470, 240);
@@ -76,16 +76,16 @@ window.onload = function() {
   cv4.height = 300;
 
   const radialGradient = ctx4.createRadialGradient(320, 100, 200, 320, 200, 20);
-  radialGradient.addColorStop(0, "red");
-  radialGradient.addColorStop(0.25, "blue");
-  radialGradient.addColorStop(0.5, "green");
-  radialGradient.addColorStop(0.75, "orange");
-  radialGradient.addColorStop(1, "white");
+  radialGradient.addColorStop(0, 'red');
+  radialGradient.addColorStop(0.25, 'blue');
+  radialGradient.addColorStop(0.5, 'green');
+  radialGradient.addColorStop(0.75, 'orange');
+  radialGradient.addColorStop(1, 'white');
 
-  ctx4.strokeStyle = "blue";
+  ctx4.strokeStyle = 'blue';
   ctx4.lineWidth = 4;
   ctx4.fillStyle = radialGradient;
   ctx4.rect(40, 40, 400, 240);
   ctx4.stroke();
   ctx4.fill();
-}
+};
