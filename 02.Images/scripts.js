@@ -28,6 +28,7 @@ window.onload = function () {
 
   const amsterdamImage = new Image();
   amsterdamImage.src = 'amsterdam.jpg';
+  // open this file with webserver, not the file directly to avoid cors
   amsterdamImage.setAttribute('crossOrigin', '');
 
   amsterdamImage.onload = function () {
